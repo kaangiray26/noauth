@@ -1,4 +1,4 @@
-# spotify-noauth
+# noauth
 Spotify's public API without authentication
 
 ## Demo
