@@ -13,4 +13,5 @@ const no = new noAuth();
 await no.auth();
 
 let response = await no.api("https://api.spotify.com/v1/browse/new-releases?country=GB&limit=5&offset=0")
+console.log(response);
 ```
