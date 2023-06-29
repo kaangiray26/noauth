@@ -37,9 +37,21 @@ class noAuth {
                 return null;
             });
     }
+
+    async capacitor_api(url, CapacitorHttp) {
+        return await CapacitorHttp.get({
+            url: url,
+            headers: {
+                Authorization: `Bearer ${this.accessToken}`,
+            }
+        })
+            .then(res => res.data)
+            .then(data => JSON.parse(data))
+            .catch(err => {
+                console.log(err);
+                return null;
+            });
+    }
 }
 
-const no = new noAuth();
-await no.auth();
-
-console.log(await no.api("https://api.spotify.com/v1/playlists/3cEYpjA9oz9GiPac4AsH4n"));
+export { noAuth };
